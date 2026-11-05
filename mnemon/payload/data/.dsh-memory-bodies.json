@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "bodies": [
+    {
+      "id": "3d0a3580-3d9b-4ed1-aec3-64ed76a166d7",
+      "name": "本机代码工作区与磁盘配置记忆",
+      "description": "收录 D 盘 workbuddy 工作区的项目长期索引（官网运营平台、多端游戏发行工程等）与本地磁盘存放规则（内容存 D 盘、C 盘不留临时文件），收录代码开发、dsh插件开发进度、其他github、前后端网页、上位机开发记录。整理或检索本机项目结构、安装路径与磁盘习惯时回忆。记录linux、windows、mac等系统相关问题",
+      "active": true,
+      "createdAt": "2026-11-01T22:30:03.496Z",
+      "updatedAt": "2026-11-02T23:48:28.058Z"
+    },
+    {
+      "id": "81e1734c-96ed-46bf-9acf-092f5d86c237",
+      "name": "车辆开发相关rusefi、rus、epic、tunerstudio、epictuner、fcore、车辆改装，stm32、嵌入式，发动机",
+      "description": "rusefi、rus、epic、tunerstudio、epictuner、车辆改装，stm32、嵌入式，发动机相关内容，fcoreweb、fcoretuner、FCoreh753、嘉立创原理图、pcb相关内容，不管是网页、软件、硬件全部存入这里",
+      "active": true,
+      "createdAt": "2026-11-01T23:49:29.614Z",
+      "updatedAt": "2026-11-02T10:38:56.575Z"
+    },
+    {
+      "id": "aaa5eea1-0fcd-4abb-a235-f3bd28b81485",
+      "name": "游戏开发",
+      "description": "存放所有游戏开发相关的内容，涵盖设计、编程、美术与发行。在涉及游戏立项、开发、调试或发布时检索本空间。",
+      "active": true,
+      "createdAt": "2026-11-01T22:48:55.684Z",
+      "updatedAt": "2026-11-02T10:19:43.853Z"
+    },
+    {
+      "id": "dad8a509-ad14-4690-92cd-5b222e667a71",
+      "name": "个人生活与职业背景",
+      "description": "存放从 DeepSeek 网页聊天记录整理出的个人生活与职业背景记忆：职业与工作（教师/公司/求职/公务员备考）、收入与社保、健康、感情与家庭、消费与购车决策、日常琐事与观点。涉及个人背景、偏好或过往经历需要回忆时检索本空间。技术类（车辆/ECU、嵌入式、游戏开发）不存这里。",
+      "active": true,
+      "createdAt": "2026-11-02T01:58:06.686Z",
+      "updatedAt": "2026-11-02T04:20:05.767Z"
+    },
+    {
+      "id": "default",
+      "name": "Mnemon记忆使用偏好",
+      "description": "存放关于使用记忆技能进行长期记忆存储与读取的偏好规则。在需要持久化信息或操作记忆系统时参考本空间，而非直接编辑记忆文件或仅依赖对话上下文。",
+      "active": true,
+      "createdAt": "2026-11-01T22:13:46.727Z",
+      "updatedAt": "2026-11-02T23:51:09.281Z"
+    }
+  ]
+}

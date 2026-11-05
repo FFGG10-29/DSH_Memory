@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "content": "Mnemon 跨工具共享：DSH 的 dsh-mnemon 读 cordis.patch.yml 的 `dataDir: D:\\memory`（store=default）；而 mnemon CLI/hooks 默认 data-dir 是 `C:\\Users\\13966\\.mnemon`。已通过用户级环境变量 `MNEMON_DATA_DIR=D:\\memory` 把 CodeBuddy/WorkBuddy 的 hooks 对齐到同一库，使 DSH+CB+WB 三者共享 `D:\\memory\\data\\default\\mnemon.db`。注意：mnemon 的 Stop hook 只输出\"评估是否要记\"的提示，不会自动写库；真正存储需模型执行 `mnemon remember`。",
+      "target": "memory",
+      "importance": "normal",
+      "created_at": "2026-11-01T23:30:02.466Z",
+      "updated_at": "2026-11-01T23:30:02.466Z",
+      "origin": {
+        "machine": "b93ae86e-18a2-49dd-a219-080e120fc4ac",
+        "label": "DESKTOP-DH1JUOP",
+        "at": "2026-11-01T23:30:02.466Z"
+      }
+    },
+    {
+      "content": "用户 2026-11-02 要求把 DeepSeek 网页版聊天记录导出（conversations.json 150 个会话）整理分类写入本地 Mnemon 记忆库；明确隐私不敏感、纯本地存储、全部如实记录。",
+      "target": "memory",
+      "importance": "normal",
+      "created_at": "2026-11-02T02:04:45.429Z",
+      "updated_at": "2026-11-02T02:04:45.429Z",
+      "origin": {
+        "machine": "b93ae86e-18a2-49dd-a219-080e120fc4ac",
+        "label": "DESKTOP-DH1JUOP",
+        "at": "2026-11-02T02:04:45.429Z"
+      }
+    },
+    {
+      "content": "本机所有模型必须放在 D 盘（用户原话：“模型必须运行在 D 盘，这是死规定”）：HF_HOME/HF_HUB_CACHE → D:\\AIModels\\huggingface，TORCH_HOME → D:\\AIModels\\torch；下载/缓存不得落 C 盘，模型启动脚本也应显式设置这些路径。",
+      "target": "memory",
+      "importance": "critical",
+      "created_at": "2026-11-02T08:05:08.506Z",
+      "updated_at": "2026-11-02T08:05:08.506Z",
+      "origin": {
+        "machine": "b93ae86e-18a2-49dd-a219-080e120fc4ac",
+        "label": "DESKTOP-DH1JUOP",
+        "at": "2026-11-02T08:05:08.506Z"
+      }
+    },
+    {
+      "content": "所有产物必须使用中文（报告、文档、代码注释、对话回复、交付物等一律中文），这是死命令/硬性规定。",
+      "target": "user",
+      "importance": "critical",
+      "created_at": "2026-11-02T12:16:44.176Z",
+      "updated_at": "2026-11-02T12:16:44.176Z",
+      "origin": {
+        "machine": "b93ae86e-18a2-49dd-a219-080e120fc4ac",
+        "label": "DESKTOP-DH1JUOP",
+        "at": "2026-11-02T12:16:44.176Z"
+      }
+    }
+  ]
+}

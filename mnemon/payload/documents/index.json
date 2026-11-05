@@ -1,0 +1,611 @@
+{
+  "version": 1,
+  "documents": [
+    {
+      "id": "feb5ab22-5f0c-4c04-88cf-3baff1838a82",
+      "title": "DSH 桌面 profile 插件配置修复记录：Mnemon CLI 路径与 WorkBuddy provider 冲突",
+      "description": "Windows 下 DSH mnemon 插件 spawn ENOENT 的根因与 cliPath 修复，以及手动 workbuddy provider 与 dsh-connect-workbuddy 插件 id 冲突的清理过程",
+      "status": "active",
+      "filename": "dsh-profile-mnemon-cli-workbuddy-provider-feb5ab22.md",
+      "relativePath": "documents/active/dsh-profile-mnemon-cli-workbuddy-provider-feb5ab22.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "2b17988e-3291-43a4-bc0c-f6c779786aff"
+      ],
+      "createdAt": "2026-11-01T22:29:41.684Z",
+      "updatedAt": "2026-11-01T22:29:41.684Z",
+      "lastAccessedAt": "2026-11-02T16:16:34.839Z",
+      "revision": 1,
+      "contentHash": "5b1557ac5df61bb3e6e0202277a11f65d9c1ccd08463c499a0d43a21831c33cd",
+      "sizeBytes": 4308,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "ade0758c-42fc-4ade-a26a-4cd95b513559",
+      "title": "Hindsight 守护进程在 Windows 上起不来：GBK banner 崩溃与必填 LLM 配置",
+      "description": "hindsight-all 1.1.0 已安装但 8888 不监听的实测根因（GBK 编码崩溃、HINDSIGHT_API_LLM_API_KEY 必填）与验证手法",
+      "status": "active",
+      "filename": "hindsight-windows-gbk-banner-llm-ade0758c.md",
+      "relativePath": "documents/active/hindsight-windows-gbk-banner-llm-ade0758c.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "702fe38b-ba04-42af-ac4b-2f9838923788"
+      ],
+      "createdAt": "2026-11-01T22:37:21.273Z",
+      "updatedAt": "2026-11-01T22:37:21.273Z",
+      "lastAccessedAt": "2026-11-02T09:24:26.705Z",
+      "revision": 1,
+      "contentHash": "3cee79454bcaa6b5f627aa54b1516f1fd2bc9445abe86a85294611635252f11d",
+      "sizeBytes": 3257,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "208b79a6-873b-48ab-b03f-6a9c4b2db13c",
+      "title": "Hindsight 守护进程接硅基流动并接入 mnemon 的可用配置（Windows）",
+      "description": "Hindsight 用 SiliconFlow(DeepSeek-V3.2 + bge-m3 + rrf) 跑通的完整启动配置、自启方式、mnemon 持久化策略接入与实测验证步骤",
+      "status": "active",
+      "filename": "hindsight-mnemon-windows-208b79a6.md",
+      "relativePath": "documents/active/hindsight-mnemon-windows-208b79a6.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "0c241bb2-9c50-40c7-9e10-ed0ad6c0eaff"
+      ],
+      "createdAt": "2026-11-01T22:45:22.070Z",
+      "updatedAt": "2026-11-01T22:45:22.070Z",
+      "lastAccessedAt": "2026-11-02T09:24:26.705Z",
+      "revision": 1,
+      "contentHash": "e30eb77ff2076394cedaf26439aac63ec3808f52bbbdf36433ba954a4e9aa72a",
+      "sizeBytes": 4024,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "85bf0603-f2d9-4d02-bd11-bcee2aac0ba3",
+      "title": "Mnemon 跨工具记忆共享对齐：DSH / CodeBuddy / WorkBuddy 共用 D:\\memory\\data\\default",
+      "description": "How the three mnemon data stores relate on this Windows desktop, the MNEMON_DATA_DIR alignment fix, and the persistence caveat a future session must re-verify.",
+      "status": "active",
+      "filename": "mnemon-dsh-codebuddy-workbuddy-d-memory-data-def-85bf0603.md",
+      "relativePath": "documents/active/mnemon-dsh-codebuddy-workbuddy-d-memory-data-def-85bf0603.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "4b7691df-a5dd-4829-976a-dd3898c36950"
+      ],
+      "createdAt": "2026-11-01T23:19:08.095Z",
+      "updatedAt": "2026-11-01T23:19:08.095Z",
+      "lastAccessedAt": "2026-11-02T08:16:39.831Z",
+      "revision": 1,
+      "contentHash": "c1637851c7ac632a55d5a9121cb4a85c1361a322374d1c9520fcaf9f9978ef68",
+      "sizeBytes": 4396,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "f6a9a828-e1ee-446e-b5c6-5563dc451377",
+      "title": "修正：旧 C:\\Users\\13966\\.mnemon 库非空且含关键偏好；最终迁移策略与 WB/CB 协议分歧行",
+      "description": "更正文档 85bf0603 中「旧 .mnemon 是空壳可安全删除」的错误；记录本次实际迁移策略、仍需复核的持久环境变量，以及写给 WorkBuddy/CodeBuddy 的协议需补的那一行分歧说明。",
+      "status": "active",
+      "filename": "c-users-13966-mnemon-wb-cb-f6a9a828.md",
+      "relativePath": "documents/active/c-users-13966-mnemon-wb-cb-f6a9a828.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "59173b1c-da41-4bc4-8a9c-82934e34b7ef"
+      ],
+      "createdAt": "2026-11-01T23:38:56.931Z",
+      "updatedAt": "2026-11-01T23:38:56.931Z",
+      "lastAccessedAt": "2026-11-02T08:16:39.831Z",
+      "revision": 1,
+      "contentHash": "dd3ad4dd0d7410eb4a49ab8bca71a45a91b958fb774c48072d755d21a1604f63",
+      "sizeBytes": 5373,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "4ea0d902-b7a2-4f45-8f19-ab26c0fceb89",
+      "title": "DSH Host 插件已验证 API 契约（dsh-memory-gateway 案例）",
+      "description": "Verified DSH Host-plugin framework contracts discovered while building the dsh-memory-gateway HTTP→mnemon bridge: the requireAgent constraint, schemastery default export + no z.infer, and the ctx.effect factory pattern.",
+      "status": "active",
+      "filename": "dsh-host-api-dsh-memory-gateway-4ea0d902.md",
+      "relativePath": "documents/active/dsh-host-api-dsh-memory-gateway-4ea0d902.md",
+      "sourcePaths": [
+        "dsh-memory-gateway",
+        "dsh-memory-gateway/src/index.ts",
+        "dsh-memory-gateway/lib/index.js",
+        "dsh-memory-gateway/cordis.patch.yml",
+        "dsh-memory-gateway/package.json",
+        "dsh-memory-gateway/README.md",
+        "dsh-memory-gateway/tsconfig.json"
+      ],
+      "sessionIds": [
+        "cde39f65-9ccb-45b6-8eb3-7e5da18eab7a"
+      ],
+      "createdAt": "2026-11-02T02:46:01.391Z",
+      "updatedAt": "2026-11-02T02:46:01.391Z",
+      "lastAccessedAt": "2026-11-02T23:57:28.709Z",
+      "revision": 1,
+      "contentHash": "582a24ffc7fb2345dc3b1c8f10b078e7d8a5b8e2223d87b4f10b7f37f9d90209",
+      "sizeBytes": 4485,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "3d1617fe-96f9-4033-96ab-bf3742bd9d05",
+      "title": "dsh-memory-gateway：mnemon 智能路由内部 + Phase 2 修正 + Phase 1 E2E 状态（核实）",
+      "description": "Verified mnemon smart-routing branch, fabric-API corrections for the proposed Phase 2, local plugin-load mechanism, and Phase 1 mock-E2E status for the dsh-memory-gateway HTTP→mnemon bridge. References existing doc 4ea0d902.",
+      "status": "active",
+      "filename": "dsh-memory-gateway-mnemon-phase-2-phase-1-e2e-3d1617fe.md",
+      "relativePath": "documents/active/dsh-memory-gateway-mnemon-phase-2-phase-1-e2e-3d1617fe.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/tests/e2e-mock.mjs",
+        "dsh-memory-gateway/lib/index.js",
+        "dsh-memory-gateway/src/index.ts"
+      ],
+      "sessionIds": [
+        "4b37f8ef-81af-4afc-b288-107e953f4af2"
+      ],
+      "createdAt": "2026-11-02T03:16:24.585Z",
+      "updatedAt": "2026-11-02T03:16:24.585Z",
+      "lastAccessedAt": "2026-11-02T12:45:28.940Z",
+      "revision": 1,
+      "contentHash": "202afcef491c0c2488334eaa5eb2d03831cf51c8cabc79e6c23f46afd89e1e24",
+      "sizeBytes": 5267,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "89d2e381-a959-4e06-b11b-13f274e68ff3",
+      "title": "元宝（腾讯 Yuanbao）导出记录整理为标准记忆条目的流程与踩坑",
+      "description": "把大体量元宝聊天导出（282 会话/4.4MB）切成独立会话、只抽用户发言、多代理提炼并去重写入记忆空间的可复用流程，含路径与子代理落库踩坑",
+      "status": "active",
+      "filename": "yuanbao-89d2e381.md",
+      "relativePath": "documents/active/yuanbao-89d2e381.md",
+      "sourcePaths": [
+        "yb_extract",
+        "yb_extract/_manifest.json",
+        "yb_extract/_all_user_asks.txt"
+      ],
+      "sessionIds": [
+        "ad44793b-5d51-4c78-813f-63109d19b83c"
+      ],
+      "createdAt": "2026-11-02T04:15:22.932Z",
+      "updatedAt": "2026-11-02T04:15:22.932Z",
+      "lastAccessedAt": "2026-11-02T04:15:22.932Z",
+      "revision": 1,
+      "contentHash": "8ac8334088f3445c0cea9fcd229dd9131bc267ca6b7c288e73c5327707568359",
+      "sizeBytes": 5141,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "09c331e0-b1df-4617-aca7-d5929f0f0260",
+      "title": "Hindsight 全量记忆导入手册（bank dsh，1430 条，2026-11-02 实测）",
+      "description": "Runner-tested procedure for bulk-importing archived memories into a Hindsight bank: async batch API shape, batch sizing, timing, and the embedded-Postgres/sandbox startup blocker.",
+      "status": "active",
+      "filename": "hindsight-bank-dsh-1430-2026-11-02-09c331e0.md",
+      "relativePath": "documents/active/hindsight-bank-dsh-1430-2026-11-02-09c331e0.md",
+      "sourcePaths": [
+        "pgwork/import_all.js"
+      ],
+      "sessionIds": [
+        "b3f21852-834e-477f-b270-ba7f4707117d"
+      ],
+      "createdAt": "2026-11-02T05:22:00.811Z",
+      "updatedAt": "2026-11-02T05:22:00.811Z",
+      "lastAccessedAt": "2026-11-02T09:24:26.705Z",
+      "revision": 1,
+      "contentHash": "5bd494a6ccf68bcde22610860d118e5d5e4f9dbbba34e54b1f2d4e2195200aff",
+      "sizeBytes": 4550,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "246118b2-bea6-45bb-b69c-ea7b1b1e445b",
+      "title": "Hindsight pg0 数据目录核验与开机自启修正（2026-11-02 实测）",
+      "description": "实测记录：如何确认内嵌 PG 真正在用哪个数据目录（避免误删承载 1430 条记忆的 pgwork 副本）、迁移回 ~/.pg0 的步骤、以及「自启脚本不要手工启 PG，交给 Hindsight pg0 自管理」的端到端验证配方。",
+      "status": "active",
+      "filename": "hindsight-pg0-2026-11-02-246118b2.md",
+      "relativePath": "documents/active/hindsight-pg0-2026-11-02-246118b2.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "5b63d5ea-e8f3-48e3-b454-60813eb12674"
+      ],
+      "createdAt": "2026-11-02T06:14:18.934Z",
+      "updatedAt": "2026-11-02T06:14:18.934Z",
+      "lastAccessedAt": "2026-11-02T08:04:09.236Z",
+      "revision": 1,
+      "contentHash": "37b77837e99a0bff0c419cf6039399d08798079881d2cdfbddc42d1ac7d6e770",
+      "sizeBytes": 6142,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "6c4b97c5-69a6-4c60-9291-c71326a7c6f3",
+      "title": "Hindsight「存储异常」实为 LLM 余额耗尽导致启动失败（2026-11-02 实测）",
+      "description": "Mnemon 面板报持久化/存储异常时，如何区分数据损坏与 Hindsight 因 LLM 402 余额不足启动失败；含证据链、token 成本核算、数据完整性核验与三种恢复选项及已失败的替代方案",
+      "status": "active",
+      "filename": "hindsight-llm-2026-11-02-6c4b97c5.md",
+      "relativePath": "documents/active/hindsight-llm-2026-11-02-6c4b97c5.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "13a7964d-a9d2-4980-8034-6307140c75c0"
+      ],
+      "createdAt": "2026-11-02T07:15:36.762Z",
+      "updatedAt": "2026-11-02T07:15:36.762Z",
+      "lastAccessedAt": "2026-11-02T09:24:26.705Z",
+      "revision": 1,
+      "contentHash": "7ef257d61ff5385d599d242cd625635b1967d54291bf45c2bf1703ccb234a1b8",
+      "sizeBytes": 5484,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "a3952ed4-70a3-4cfc-954e-92dd01e961ad",
+      "title": "dsh-memory-gateway：recall 门禁调查与原生 mnemon CLI 绕过（已实证）",
+      "description": "Why mnemon_recall (requirePinnedView gate) and the dsh-mnemon closure-local lifecycle both fail for an external gateway, and the verified native mnemon CLI recall path (resolveMnemonCli + --store scoping). Supplements host-API doc 4ea0d902 and write-path doc 3d1617fe.",
+      "status": "active",
+      "filename": "dsh-memory-gateway-recall-mnemon-cli-a3952ed4.md",
+      "relativePath": "documents/active/dsh-memory-gateway-recall-mnemon-cli-a3952ed4.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/src/index.ts"
+      ],
+      "sessionIds": [
+        "42fa4b89-365e-414c-89dd-93a2381beacc"
+      ],
+      "createdAt": "2026-11-02T08:17:02.002Z",
+      "updatedAt": "2026-11-02T08:17:02.002Z",
+      "lastAccessedAt": "2026-11-03T13:43:10.516Z",
+      "revision": 1,
+      "contentHash": "556a4d92988147b5e8ada0c6f5825fa798b0e62361bd1f6ace585589a804c6bf",
+      "sizeBytes": 5412,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "a81084df-258d-4c6e-a89a-ee4ae2d8b928",
+      "title": "dsh-memory-gateway：外部工具集成契约（已实证，HTTP + MCP）",
+      "description": "Verified external-facing integration contract for dsh-memory-gateway: published HTTP endpoints + field names, MCP tool surface (lib/mcp-server.js), connection-discovery/auth model, and the critical classification-routing caveat for WorkBuddy/CodeBuddy. Supplements 4ea0d902/3d1617fe/a3952ed4.",
+      "status": "active",
+      "filename": "dsh-memory-gateway-http-mcp-a81084df.md",
+      "relativePath": "documents/active/dsh-memory-gateway-http-mcp-a81084df.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/src/index.ts",
+        "dsh-memory-gateway/src/mcp-server.ts",
+        "dsh-memory-gateway/package.json",
+        "dsh-memory-gateway/docs/EXTERNAL-SETUP.md",
+        "dsh-memory-gateway/cordis.patch.yml"
+      ],
+      "sessionIds": [
+        "905ce796-7a84-41d7-8ea5-9f31f825938e"
+      ],
+      "createdAt": "2026-11-02T08:41:53.387Z",
+      "updatedAt": "2026-11-02T08:41:53.387Z",
+      "lastAccessedAt": "2026-11-03T07:33:57.045Z",
+      "revision": 1,
+      "contentHash": "e9c6a0d6a313b6064516c27b90150174b37f0e4bab0c904a6e32b9dd9c1d36a4",
+      "sizeBytes": 4433,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "06440146-da9d-466d-b1d8-046b23032dde",
+      "title": "Hindsight 零成本可用配置：DSH 免费转发 LLM + 本地 bge-m3（D 盘模型）与三个诊断陷阱",
+      "description": "硅基流动余额耗尽后，Hindsight 改用 DSH our-free-model 免费转发（openrouter/free）+ 本地 CPU bge-m3 的完整落地配置、验证结论，以及 HF_HUB_OFFLINE、bash 内联中文 JSON、初始化超时三个易致误判的陷阱",
+      "status": "active",
+      "filename": "hindsight-dsh-llm-bge-m3-d-06440146.md",
+      "relativePath": "documents/active/hindsight-dsh-llm-bge-m3-d-06440146.md",
+      "sourcePaths": [
+        "pgwork/q_cn.json"
+      ],
+      "sessionIds": [
+        "ad2231d7-1225-49c9-9df7-0ab6aa99f46e"
+      ],
+      "createdAt": "2026-11-02T09:25:20.606Z",
+      "updatedAt": "2026-11-02T09:25:20.606Z",
+      "lastAccessedAt": "2026-11-02T16:16:34.839Z",
+      "revision": 1,
+      "contentHash": "4523aae1c0336d207bd66e51cddbd8c8f407f4e8165b5478d383a6131156243d",
+      "sizeBytes": 5894,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "2213e84a-747b-4b4d-9481-801dba642884",
+      "title": "FCore fcore-web：本地仓库与服务器部署拓扑及一致性结论",
+      "description": "服务器 /opt/fcore/fcore-web 是已部署副本（非 git 库），本地 main（9079d9f）为权威且与/领先于服务器；服务器端 admin/fcc.html 是无人引用的陈旧孤儿文件。避免重复全量 SSH 比对。",
+      "status": "active",
+      "filename": "fcore-fcore-web-2213e84a.md",
+      "relativePath": "documents/active/fcore-fcore-web-2213e84a.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "37812545-1efc-4380-8a6f-5c51e97b9687"
+      ],
+      "createdAt": "2026-11-02T11:35:14.789Z",
+      "updatedAt": "2026-11-02T11:35:14.789Z",
+      "lastAccessedAt": "2026-11-02T11:35:14.789Z",
+      "revision": 1,
+      "contentHash": "44b13537c71d36f02f2ce476e57e531376dcbf98a295d301a6507e7b45a3dd0c",
+      "sizeBytes": 3373,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "06e5d07a-7ff7-403c-87d7-8cea7984422d",
+      "title": "dsh-memory-gateway Phase 3：client bundle UI 注册机制（首次实证）",
+      "description": "Verified DSH client-bundle registration mechanics discovered building the dsh-memory-gateway Phase-3 Plugins-page card: __ModuleLoader__.load/ctx.slots shape, dsh.client.inject requirement, install_bundle workspace link, /plugins/??pkg/client.js serve address, and the startup-only client-modules scan (hot reload insufficient, needs DSH restart). Supplements host-API doc 4ea0d902 and write-path doc 3d1617fe.",
+      "status": "active",
+      "filename": "dsh-memory-gateway-phase-3-client-bundle-ui-06e5d07a.md",
+      "relativePath": "documents/active/dsh-memory-gateway-phase-3-client-bundle-ui-06e5d07a.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/package.json",
+        "dsh-memory-gateway/lib/client.js"
+      ],
+      "sessionIds": [
+        "6928e140-937b-4afa-9cbe-1175cc750d29"
+      ],
+      "createdAt": "2026-11-02T12:45:48.260Z",
+      "updatedAt": "2026-11-02T12:45:48.260Z",
+      "lastAccessedAt": "2026-11-03T13:43:10.516Z",
+      "revision": 1,
+      "contentHash": "9df23995024322ec08eef4fc9e0a9ce66a6af29d4bdd11edfb2be4e396b6e814",
+      "sizeBytes": 4778,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "2d59b052-9b4d-4c1e-9f7c-712ce4449b2b",
+      "title": "dsh-memory-gateway：设置页看不到的根因（slots.inject vs register）与双入口实证",
+      "description": "Root cause of the missing dsh-memory-gateway settings UI: direct ctx.slots.register throws when the host slot isn't declared (silently swallowed), must use ctx.slots.inject(name, () => ctx.slots.register(...)); plugins.bundle.config only renders inside the package detail page, so an extra settings.section registration is needed. Includes verified save/health checks.",
+      "status": "active",
+      "filename": "dsh-memory-gateway-slots-inject-vs-register-2d59b052.md",
+      "relativePath": "documents/active/dsh-memory-gateway-slots-inject-vs-register-2d59b052.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/src/index.ts",
+        "dsh-memory-gateway/lib/client.js",
+        "dsh-memory-gateway/tests/run-client.mjs",
+        "dsh-memory-gateway/package.json"
+      ],
+      "sessionIds": [
+        "8c092011-d3b6-4e65-ba0f-58583d6116c9"
+      ],
+      "createdAt": "2026-11-02T16:16:44.485Z",
+      "updatedAt": "2026-11-02T16:16:44.485Z",
+      "lastAccessedAt": "2026-11-02T16:16:44.485Z",
+      "revision": 1,
+      "contentHash": "282c37a485a8d7066f3b9aa5be86ed3c09c47b1fdff7f772bc418682c0fa28d6",
+      "sizeBytes": 4387,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "a85dc4e2-da18-47b0-a854-8431d5a242b1",
+      "title": "dsh-memory-gateway 0.4.1：recall 响应信封缺陷修复与「客户端是否依赖私有信封」的实证方法",
+      "description": "0.4.1 修复 /api/recall 双层信封（应为扁平 query/mode/searchedSpaces/results）、MCP 协议层无错的区分、判定客户端是否依赖私有信封的实证步骤、回归测试 recall-shape.mjs 与三宿主 mcp.json 注册实况。补充 a81084df。",
+      "status": "active",
+      "filename": "dsh-memory-gateway-0-4-1-recall-a85dc4e2.md",
+      "relativePath": "documents/active/dsh-memory-gateway-0-4-1-recall-a85dc4e2.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/src/index.ts",
+        "dsh-memory-gateway/src/mcp-server.ts",
+        "dsh-memory-gateway/package.json",
+        "dsh-memory-gateway/tests/recall-shape.mjs",
+        "dsh-memory-gateway/docs/market-entry.yml",
+        "dsh-memory-gateway/README.md",
+        "workbuddy/DSH记忆网关-CodeBuddy接入配置.md"
+      ],
+      "sessionIds": [
+        "a03cacb7-269f-47db-983b-8bab96b2bc54"
+      ],
+      "createdAt": "2026-11-02T23:57:40.386Z",
+      "updatedAt": "2026-11-02T23:57:40.386Z",
+      "lastAccessedAt": "2026-11-03T13:43:10.516Z",
+      "revision": 1,
+      "contentHash": "460a7b680812905f41ae88cc48ec06b4dbf3582fd6aed2ebf54cbc571a1b11a6",
+      "sizeBytes": 5777,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "5d4bc352-0c3b-4f53-9fd7-e143ef955cbe",
+      "title": "dsh-memory-gateway：recall/forget 仅覆盖 2/9 Provider 的缺口与通用路径（RPC search / 公开工具）调查",
+      "description": "未落地的方向调查：recall/forget 当前只覆盖 Mnemon Native+Hindsight，7 个远端 Provider 读不到删不了；发现 DSH 通用 memory-spaces search 路径及公开工具 vs RPC 直连的取舍与用户\"勿绑私有字段\"约束。",
+      "status": "active",
+      "filename": "dsh-memory-gateway-recall-forget-2-9-provider-rp-5d4bc352.md",
+      "relativePath": "documents/active/dsh-memory-gateway-recall-forget-2-9-provider-rp-5d4bc352.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/src/index.ts",
+        "DSH mnemon connection service (lib/types/rpc-host.js, rpc.js, peer.js)"
+      ],
+      "sessionIds": [
+        "14ede9e8-3429-400a-b25b-c002cff59e47"
+      ],
+      "createdAt": "2026-11-03T07:34:35.803Z",
+      "updatedAt": "2026-11-03T07:34:35.803Z",
+      "lastAccessedAt": "2026-11-03T13:43:10.516Z",
+      "revision": 1,
+      "contentHash": "f3b76261ab39bdefadf1df30604f959ce973c9e8df06d7c713d2e7019512ee9e",
+      "sizeBytes": 5703,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "2c654ad8-42bb-43a9-87b2-d12a4744e19f",
+      "title": "dsh-memory-gateway 0.4.2：recall 改为「借活 agent + followup() 真实 turn」路径（架构变更 + 当前实证状态）",
+      "description": "v0.4.2 recall 架构重写为借活 agent+followup() 真实 turn，推翻 a3952ed4 的原生 CLI 结论；当前实测返回空结果，根因未定。",
+      "status": "active",
+      "filename": "dsh-memory-gateway-0-4-2-recall-agent-followup-t-2c654ad8.md",
+      "relativePath": "documents/active/dsh-memory-gateway-0-4-2-recall-agent-followup-t-2c654ad8.md",
+      "sourcePaths": [
+        "dsh-memory-gateway/src/index.ts",
+        "dsh-memory-gateway/lib/client.js",
+        "dsh-memory-gateway/package.json"
+      ],
+      "sessionIds": [
+        "ba2feb31-f45c-4e29-b3dc-70fe1d205b35"
+      ],
+      "createdAt": "2026-11-03T13:46:07.166Z",
+      "updatedAt": "2026-11-03T13:46:07.166Z",
+      "lastAccessedAt": "2026-11-03T13:46:07.166Z",
+      "revision": 1,
+      "contentHash": "34018943a7aab13e01738e57adf40cd5e857d884f9dc6687c8284a91a9970953",
+      "sizeBytes": 4954,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "7b4338fd-295c-44b5-abc0-16ab0bceba15",
+      "title": "暗黑神王：角色走动抽搐/影分身的定位与修复（Renderer.lua 帧选择策略）",
+      "description": "",
+      "status": "active",
+      "filename": "renderer-lua-7b4338fd.md",
+      "relativePath": "documents/active/renderer-lua-7b4338fd.md",
+      "sourcePaths": [],
+      "sessionIds": [
+        "74039b3b-614e-494c-8022-dc427f034e97"
+      ],
+      "createdAt": "2026-11-03T14:09:17.079Z",
+      "updatedAt": "2026-11-03T14:09:17.079Z",
+      "lastAccessedAt": "2026-11-04T17:21:06.596Z",
+      "revision": 1,
+      "contentHash": "ecfc5371781cbe2c0da4fa02cbc6913fe3ee3dba207b277f72ab4cac594e0faa",
+      "sizeBytes": 3883,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "361586f1-f829-433e-89f3-2f4cefb06017",
+      "title": "暗黑神王：角色跑动动画的资产限制与可行方案（无跑动帧 / sprite-gen 不可用）",
+      "description": "记录《暗黑神王》角色无跑动帧的资产限制与跑动动画可行方案",
+      "status": "active",
+      "filename": "sprite-gen-361586f1.md",
+      "relativePath": "documents/active/sprite-gen-361586f1.md",
+      "sourcePaths": [
+        "scripts/Game/Renderer.lua",
+        "assets/image/model_1108_0..9.png",
+        "assets/image/hero_frame_0..9.png",
+        "save_darkgod.json"
+      ],
+      "sessionIds": [
+        "d4344f4d-6811-40ce-b0c3-74d5da4bee6b"
+      ],
+      "createdAt": "2026-11-03T16:10:00.120Z",
+      "updatedAt": "2026-11-03T16:10:00.120Z",
+      "lastAccessedAt": "2026-11-04T17:21:06.596Z",
+      "revision": 1,
+      "contentHash": "c4e6bb8764c91a655061fff65686b28d2b46688c5f4488a84436bec72285d46a",
+      "sizeBytes": 4957,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "99900a71-bfc4-4eb2-9701-5169fc47dd9f",
+      "title": "暗黑神王：跑动序列帧的实现方案（程序化 gen_run_frames.py + Renderer 帧选择接入）",
+      "description": "记录用 tools/gen_run_frames.py 程序化生成 32 张跑动帧并接入 Renderer.lua 的做法、验证结果与真腿动画的后续付费路径",
+      "status": "active",
+      "filename": "gen-run-frames-py-renderer-99900a71.md",
+      "relativePath": "documents/active/gen-run-frames-py-renderer-99900a71.md",
+      "sourcePaths": [
+        "tools/gen_run_frames.py",
+        "scripts/Game/Renderer.lua",
+        "assets/image",
+        "screenshots/run_cycle_1108.png",
+        "screenshots/run_vs_idle.png"
+      ],
+      "sessionIds": [
+        "5ffb793c-f991-46f9-86b5-43b382b1f9ac"
+      ],
+      "createdAt": "2026-11-04T01:18:13.149Z",
+      "updatedAt": "2026-11-04T01:18:13.149Z",
+      "lastAccessedAt": "2026-11-04T18:45:03.436Z",
+      "revision": 1,
+      "contentHash": "c5dee8be88c6ac3040fbe0bd2925fa4f07b63608a9d4ab3e391acfc15745c37d",
+      "sizeBytes": 6030,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "dde917f5-af69-4ad4-aff7-42276c7a4c67",
+      "title": "暗黑神王：三界地图页（P11）MapV2 重度商业化重构",
+      "description": "《暗黑神王》P11 三界地图页 MapV2 重构：结构、架构决策、数据源、验证与发布流程、踩坑。",
+      "status": "active",
+      "filename": "p11-mapv2-dde917f5.md",
+      "relativePath": "documents/active/p11-mapv2-dde917f5.md",
+      "sourcePaths": [
+        "scripts/UI/MapV2.lua",
+        "scripts/UI/Panels.lua",
+        "scripts/Game/IconRegistry.lua",
+        "scripts/main.lua"
+      ],
+      "sessionIds": [
+        "82ae7ed5-2285-4346-92ca-964551e795aa"
+      ],
+      "createdAt": "2026-11-04T16:38:31.462Z",
+      "updatedAt": "2026-11-04T16:38:31.462Z",
+      "lastAccessedAt": "2026-11-04T18:45:03.436Z",
+      "revision": 1,
+      "contentHash": "edec0987aa04be46a00deb8b3c1feb9ee3bdfcccd76f4868553f99423122b095",
+      "sizeBytes": 6176,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "cfdc114c-90b6-40a1-a0ce-fb527fbd8b7f",
+      "title": "暗黑神王：PanelsV4 21 页 UI 铁律重构（分派接入、两处运行时崩溃、冒烟验证与发布）",
+      "description": "《暗黑神王》新建 PanelsV4.lua 按 5 条 UI 铁律重构 21 个页面：结构范式、podium/页签两处崩溃根因、37 页×子页签冒烟验证流程、TEMP 块还原与构建发布。",
+      "status": "active",
+      "filename": "panelsv4-21-ui-cfdc114c.md",
+      "relativePath": "documents/active/panelsv4-21-ui-cfdc114c.md",
+      "sourcePaths": [
+        "scripts/UI/PanelsV4.lua",
+        "scripts/UI/Panels.lua",
+        "scripts/main.lua",
+        "tools/patch_main_v4.py",
+        "tools/fix_v4_war_podium.py",
+        "tools/clean_main_v4.py"
+      ],
+      "sessionIds": [
+        "13bf5fe9-ab21-4220-93ce-2d8e374ef361"
+      ],
+      "createdAt": "2026-11-04T17:21:17.733Z",
+      "updatedAt": "2026-11-04T17:21:17.733Z",
+      "lastAccessedAt": "2026-11-04T18:45:03.436Z",
+      "revision": 1,
+      "contentHash": "611aec7a521578e28b4435b160197ed46ccd78de8f9453451a300207892a08cb",
+      "sizeBytes": 5115,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "3ac56773-2bfd-47f1-95bc-ebf4dcb6b64f",
+      "title": "暗黑神王：功法页 + 战令页重构（Yoga 高度塌陷、职业过滤、赛季路由与烘焙文字切图修复）",
+      "description": "《暗黑神王》PanelsV4 中【功法】页与【战令】页的重构：技能格空白根因（嵌套 height=100% 高度塌陷）、按 classId 过滤显示 42 条技能、阶数配色与底部抽屉；战令页赛季大卡/时间轴/三档卡；以及全局 mir 按钮切图烘焙文字导致文字糊叠的修复与发布流程。",
+      "status": "active",
+      "filename": "yoga-3ac56773.md",
+      "relativePath": "documents/active/yoga-3ac56773.md",
+      "sourcePaths": [
+        "scripts/UI/PanelsV4.lua",
+        "scripts/UI/Panels.lua",
+        "scripts/UI/MirSkin.lua",
+        "scripts/main.lua",
+        "tools/fix_skill_grid.py",
+        "tools/patch_season_route.py",
+        "tools/make_plain_buttons.py",
+        "tools/fix_nav_flat.py",
+        "tools/restore_temp_switch.py"
+      ],
+      "sessionIds": [
+        "f79c389e-c979-4791-8a6d-aac1e7fe64e3"
+      ],
+      "createdAt": "2026-11-04T18:17:46.270Z",
+      "updatedAt": "2026-11-04T18:17:46.270Z",
+      "lastAccessedAt": "2026-11-04T18:45:03.436Z",
+      "revision": 1,
+      "contentHash": "fd0378f43e2ec94ef293382209dd147f8290321d55363fb5d54666e56f1038ce",
+      "sizeBytes": 6117,
+      "memoryBodyIds": []
+    },
+    {
+      "id": "987df47c-4ffd-4342-9588-2c804afad4da",
+      "title": "暗黑神王：左上角 HUD（H01）重构 — VIP 徽章、等级纯文字、以血条字号为基准",
+      "description": "《暗黑神王》左上角 HUD(H01) 重构落地记录：VIP 皇冠徽章、等级去方框改单行 Lv.N 并与血条字号对齐、240px 红渐变血条条内 x/y 数值、灵石图标行、300px 渐变底、删除左下摇杆；含多轮返工的根因（改\"方块尺寸\"而非\"字号\"）与 Python 补丁断言失败教训。",
+      "status": "active",
+      "filename": "hud-h01-vip-987df47c.md",
+      "relativePath": "documents/active/hud-h01-vip-987df47c.md",
+      "sourcePaths": [
+        "scripts/UI/Hud.lua",
+        "scripts/UI/Joystick.lua",
+        "scripts/main.lua",
+        "tools/fix_hud_h01_scale.py",
+        "tools/fix_hud_h01_font.py",
+        "tools/fix_hud_h01_level.py",
+        "tools/fix_hud_level_nobox.py",
+        "tools/remove_joystick.py"
+      ],
+      "sessionIds": [
+        "fe1ac59a-aa64-4c74-904e-0898e650405a"
+      ],
+      "createdAt": "2026-11-04T18:45:17.639Z",
+      "updatedAt": "2026-11-04T18:45:17.639Z",
+      "lastAccessedAt": "2026-11-04T18:45:17.639Z",
+      "revision": 1,
+      "contentHash": "104d3948dac135d10222264c7a218c6c523b134a81aefaa042549b09d68e6073",
+      "sizeBytes": 5616,
+      "memoryBodyIds": []
+    }
+  ]
+}
