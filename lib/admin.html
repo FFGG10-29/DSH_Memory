@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSH 记忆网关 · 设置</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f7f9;
+    --panel: #ffffff;
+    --text: #1b1d21;
+    --muted: #6b7280;
+    --border: #e3e6ea;
+    --field: #fafbfc;
+    --accent: #2563eb;
+    --ok: #16a34a;
+    --err: #dc2626;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181c;
+      --panel: #1e2126;
+      --text: #e8eaed;
+      --muted: #9aa2ad;
+      --border: #2f343b;
+      --field: #24282e;
+      --accent: #3b82f6;
+      --ok: #4ade80;
+      --err: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 28px 20px 48px;
+    background: var(--bg);
+    color: var(--text);
+    font: 14px/1.55 -apple-system, "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { margin-bottom: 20px; }
+  h1 { margin: 0 0 4px; font-size: 19px; font-weight: 650; letter-spacing: .2px; }
+  .sub { color: var(--muted); font-size: 12.5px; }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .panel h2 {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: .4px;
+    text-transform: uppercase;
+  }
+  .rows { display: flex; flex-direction: column; gap: 9px; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .row .k { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+  .row .v {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12px;
+    text-align: right;
+    word-break: break-all;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  label.f { display: flex; flex-direction: column; gap: 6px; }
+  label.f > span { font-size: 12.5px; color: var(--muted); }
+  input[type="text"], input[type="password"] {
+    padding: 8px 10px;
+    font: inherit;
+    font-size: 12.5px;
+    color: var(--text);
+    background: var(--field);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+  }
+  input:focus { border-color: var(--accent); }
+  .hint { font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+  .toggle { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+  .toggle .txt strong { font-weight: 600; font-size: 13.5px; display: block; margin-bottom: 3px; }
+  .toggle .txt .hint { max-width: 560px; }
+  .switch { position: relative; width: 44px; height: 24px; flex: 0 0 auto; }
+  .switch input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; z-index: 2; }
+  .switch .track {
+    position: absolute; inset: 0; border-radius: 999px;
+    background: var(--border); transition: background .18s;
+  }
+  .switch .knob {
+    position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+    border-radius: 50%; background: #fff; transition: transform .18s;
+    box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  }
+  .switch input:checked + .track { background: var(--accent); }
+  .switch input:checked ~ .knob { transform: translateX(20px); }
+  .actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+  button {
+    font: inherit; font-size: 13px; padding: 8px 18px;
+    color: #fff; background: var(--accent);
+    border: none; border-radius: 8px; cursor: pointer;
+  }
+  button:disabled { opacity: .55; cursor: default; }
+  button.ghost { color: var(--text); background: transparent; border: 1px solid var(--border); }
+  #note { font-size: 12.5px; color: var(--muted); }
+  #note.ok { color: var(--ok); }
+  #note.err { color: var(--err); }
+  .spaces { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 11.5px; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid var(--border); color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>DSH 记忆网关</h1>
+    <div class="sub">配置保存在 <code>%USERPROFILE%\.dsh\profiles\desktop\memory-gateway.config.json</code>，保存后立即生效，无需重启 DSH。</div>
+  </header>
+
+  <section class="panel">
+    <h2>运行状态</h2>
+    <div class="rows">
+      <div class="row"><span class="k">版本 / 端口</span><span class="v" id="s-ver">—</span></div>
+      <div class="row"><span class="k">共享 Token</span><span class="v" id="s-token">—</span></div>
+      <div class="row"><span class="k">Hindsight</span><span class="v" id="s-hs">—</span></div>
+      <div class="row"><span class="k">Ollama</span><span class="v" id="s-ollama">—</span></div>
+      <div class="row"><span class="k">删除门禁</span><span class="v" id="s-del">—</span></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>记忆空间</h2>
+    <div class="spaces" id="s-spaces"><span class="chip">读取中…</span></div>
+  </section>
+
+  <section class="panel">
+    <h2>删除权限</h2>
+    <div class="toggle">
+      <div class="txt">
+        <strong>允许外部工具删除记忆</strong>
+        <div class="hint" id="del-hint">加载中…</div>
+      </div>
+      <div class="switch">
+        <input type="checkbox" id="allowDelete">
+        <div class="track"></div>
+        <div class="knob"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>参数</h2>
+    <div class="grid">
+      <label class="f">
+        <span>拥有者令牌（adminToken）</span>
+        <input type="password" id="adminToken" autocomplete="off" spellcheck="false" placeholder="未设置（留空保持不变）">
+        <span class="hint">关闭外部删除时，删除接口只认这个令牌。</span>
+      </label>
+      <label class="f">
+        <span>默认记忆空间</span>
+        <input type="text" id="defaultSpace" spellcheck="false" placeholder="default">
+        <span class="hint">调用方未指定空间时的落点。</span>
+      </label>
+      <label class="f">
+        <span>Hindsight 端点</span>
+        <input type="text" id="hindsightEndpoint" spellcheck="false" placeholder="http://127.0.0.1:8888">
+        <span class="hint">留空 = 关闭 Hindsight 跨库召回（阿鱼等历史记忆在此）。</span>
+      </label>
+      <label class="f">
+        <span>Ollama 端点</span>
+        <input type="text" id="ollamaEndpoint" spellcheck="false" placeholder="http://127.0.0.1:11434">
+        <span class="hint">留空 = 关闭本地向量召回。</span>
+      </label>
+      <label class="f">
+        <span>Ollama 模型</span>
+        <input type="text" id="ollamaModel" spellcheck="false" placeholder="nomic-embed-text">
+      </label>
+    </div>
+    <div class="actions">
+      <button id="save">保存设置</button>
+      <button id="reload" class="ghost">重新读取</button>
+      <span id="note"></span>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var note = $('note');
+
+  function say(msg, kind) {
+    note.textContent = msg || '';
+    note.className = kind || '';
+  }
+
+  function setText(id, v) { $(id).textContent = (v === undefined || v === null || v === '') ? '—' : String(v); }
+
+  function paint(cfg) {
+    if (!cfg) return;
+    setText('s-ver', 'v' + (cfg.version || '?') + ' · 端口 ' + (cfg.port || '?'));
+    setText('s-token', cfg.tokenHint || '—');
+    setText('s-hs', cfg.hindsightEndpoint || 'off');
+    setText('s-ollama', (cfg.ollamaEndpoint || 'off') + (cfg.ollamaModel ? ' · ' + cfg.ollamaModel : ''));
+    setText('s-del', cfg.allowExternalDelete ? '共享 Token 可删' : '仅 adminToken 可删');
+    $('allowDelete').checked = cfg.allowExternalDelete === true;
+    $('del-hint').textContent = cfg.allowExternalDelete
+      ? '开启：WorkBuddy / CodeBuddy / Claude Code / Codex 持共享 Token 即可删（adminToken 仍然有效，不会把拥有者锁在外面）。'
+      : '关闭：只有拥有者 adminToken 能删，外部工具一律 401。';
+    $('defaultSpace').value = cfg.defaultSpace || '';
+    $('hindsightEndpoint').value = cfg.hindsightEndpoint || '';
+    $('ollamaEndpoint').value = cfg.ollamaEndpoint || '';
+    $('ollamaModel').value = cfg.ollamaModel || '';
+    $('adminToken').placeholder = cfg.adminTokenSet
+      ? '已设置 ' + (cfg.adminTokenHint || '') + '（留空保持不变）'
+      : '未设置（留空保持不变）';
+  }
+
+  function loadSpaces() {
+    fetch('/api/spaces').then(function (r) { return r.json(); }).then(function (j) {
+      var list = (j && j.spaces) || [];
+      var box = $('s-spaces');
+      box.innerHTML = '';
+      if (!list.length) {
+        box.innerHTML = '<span class="chip">没有读到空间</span>';
+        return;
+      }
+      list.forEach(function (s) {
+        var chip = document.createElement('span');
+        chip.className = 'chip';
+        var name = s.name || s.id;
+        if (s.id && s.id !== name) chip.title = s.id;
+        chip.textContent = name + (s.provider && s.provider !== 'mnemon' ? ' · ' + s.provider : '');
+        box.appendChild(chip);
+      });
+    }).catch(function () {
+      $('s-spaces').innerHTML = '<span class="chip">读取失败</span>';
+    });
+  }
+
+  function load() {
+    say('读取中…');
+    fetch('/api/config').then(function (r) { return r.json(); }).then(function (cfg) {
+      paint(cfg);
+      say('');
+      loadSpaces();
+    }).catch(function () {
+      say('无法连接网关：请确认 DSH 正在运行（127.0.0.1:8890）', 'err');
+    });
+  }
+
+  $('save').addEventListener('click', function () {
+    var btn = this;
+    btn.disabled = true;
+    say('保存中…');
+    var patch = {
+      confirm: true,
+      allowExternalDelete: $('allowDelete').checked === true,
+      defaultSpace: $('defaultSpace').value.trim(),
+      hindsightEndpoint: $('hindsightEndpoint').value.trim(),
+      ollamaEndpoint: $('ollamaEndpoint').value.trim(),
+      ollamaModel: $('ollamaModel').value.trim()
+    };
+    var admin = $('adminToken').value.trim();
+    if (admin) patch.adminToken = admin;
+
+    fetch('/api/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(patch)
+    }).then(function (r) { return r.json().then(function (j) { return { status: r.status, body: j }; }); })
+      .then(function (out) {
+        if (out.status === 200) {
+          paint(out.body);
+          $('adminToken').value = '';
+          say('已保存并立即生效', 'ok');
+          loadSpaces();
+        } else {
+          say('保存失败：' + ((out.body && (out.body.message || out.body.error)) || ('HTTP ' + out.status)), 'err');
+        }
+      })
+      .catch(function () {
+        say('无法连接网关，保存未生效。', 'err');
+      })
+      .then(function () { btn.disabled = false; });
+  });
+
+  $('reload').addEventListener('click', load);
+
+  load();
+})();
+</script>
+</body>
+</html>

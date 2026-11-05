@@ -1,0 +1,8 @@
+url: https://github.com/FFGG10-29/DSH_Memory
+name: FFGG10-29/DSH_Memory
+category: memory
+description:
+  en: 'Turns DSH into a central memory hub: external AI tools (CodeBuddy, WorkBuddy, Cursor, Claude Code) write and recall over HTTP or MCP, while DSH''s own engine (dsh-mnemon) classifies and routes every write into the right Memory Space. Recalls are routed by the mnemon engine across every installed Provider.'
+  zh: '把 DSH 变成中央记忆枢纽：外部 AI 工具（CodeBuddy / WorkBuddy / Cursor / Claude Code）通过 HTTP 或 MCP 读写记忆，每一条写入都由 DSH 自己的记忆引擎（dsh-mnemon）蒸馏分类、路由进正确的 Memory Space；检索由 mnemon 引擎统一路由到全部已安装的 Provider。'
+# optional — a GitHub-hosted raster image used as the storefront tile
+# icon: https://raw.githubusercontent.com/FFGG10-29/DSH_Memory/main/docs/icon-180.png

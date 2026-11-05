@@ -1,0 +1,19 @@
+# 依赖与构建产物
+node_modules/
+dist/
+*.tsbuildinfo
+
+# 含本机真实记忆内容与调试输出的演示目录（含个人数据，禁止上传）
+.demo/
+
+# 运行期状态与凭据（token / adminToken 等，绝不入库）
+*.state.json
+memory-gateway.state.json
+.env
+.env.*
+*.token
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.log

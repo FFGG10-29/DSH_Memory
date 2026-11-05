@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="620" fill="#f8fafc"/>
+
+  <!-- 外部工具层 -->
+  <rect x="40" y="30" width="820" height="96" rx="10" fill="#e0f2fe" stroke="#7dd3fc"/>
+  <text x="60" y="58" font-size="15" font-weight="700" fill="#075985">外部 AI 工具层</text>
+  <g font-size="13" fill="#0c4a6e" text-anchor="middle">
+    <rect x="80" y="72" width="120" height="36" rx="8" fill="#fff" stroke="#7dd3fc"/>
+    <text x="140" y="95">CodeBuddy</text>
+    <rect x="230" y="72" width="120" height="36" rx="8" fill="#fff" stroke="#7dd3fc"/>
+    <text x="290" y="95">WorkBuddy</text>
+    <rect x="380" y="72" width="120" height="36" rx="8" fill="#fff" stroke="#7dd3fc"/>
+    <text x="440" y="95">Cursor</text>
+    <rect x="530" y="72" width="120" height="36" rx="8" fill="#fff" stroke="#7dd3fc"/>
+    <text x="590" y="95">Claude Code</text>
+    <rect x="680" y="72" width="120" height="36" rx="8" fill="#fff" stroke="#7dd3fc"/>
+    <text x="740" y="95">VS Code</text>
+  </g>
+
+  <!-- 连接线：外部工具 -> 网关 -->
+  <line x1="250" y1="126" x2="250" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="126" x2="450" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="650" y1="126" x2="650" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="258" y="158" font-size="11" fill="#475569">MCP stdio</text>
+  <text x="458" y="158" font-size="11" fill="#475569">HTTP 127.0.0.1:8890</text>
+
+  <!-- 网关层 -->
+  <rect x="40" y="180" width="820" height="250" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+  <text x="60" y="208" font-size="15" font-weight="700" fill="#065f46">dsh-memory-gateway（DSH Host 插件）</text>
+
+  <rect x="70" y="222" width="170" height="60" rx="8" fill="#fff" stroke="#34d399"/>
+  <text x="155" y="246" font-size="13" font-weight="600" fill="#065f46" text-anchor="middle">MCP Server</text>
+  <text x="155" y="266" font-size="11" fill="#475569" text-anchor="middle">stdio，5 个工具</text>
+
+  <rect x="270" y="222" width="170" height="60" rx="8" fill="#fff" stroke="#34d399"/>
+  <text x="355" y="246" font-size="13" font-weight="600" fill="#065f46" text-anchor="middle">HTTP Server</text>
+  <text x="355" y="266" font-size="11" fill="#475569" text-anchor="middle">裸 node:http，WebRoute</text>
+
+  <rect x="470" y="222" width="170" height="60" rx="8" fill="#fff" stroke="#34d399"/>
+  <text x="555" y="246" font-size="13" font-weight="600" fill="#065f46" text-anchor="middle">Bearer 鉴权</text>
+  <text x="555" y="266" font-size="11" fill="#475569" text-anchor="middle">token / adminToken</text>
+
+  <rect x="670" y="222" width="160" height="60" rx="8" fill="#fff" stroke="#34d399"/>
+  <text x="750" y="246" font-size="13" font-weight="600" fill="#065f46" text-anchor="middle">插件设置卡片</text>
+  <text x="750" y="266" font-size="11" fill="#475569" text-anchor="middle">热应用，免重启</text>
+
+  <rect x="270" y="310" width="370" height="96" rx="8" fill="#fff" stroke="#34d399"/>
+  <text x="455" y="334" font-size="13" font-weight="600" fill="#065f46" text-anchor="middle">记忆路由层</text>
+  <text x="455" y="356" font-size="11" fill="#475569" text-anchor="middle">写入：借顶层 agent → mnemon_remember（智能分类）</text>
+  <text x="455" y="374" font-size="11" fill="#475569" text-anchor="middle">读取：本地 mnemon CLI + Hindsight 交错合并</text>
+  <text x="455" y="392" font-size="11" fill="#475569" text-anchor="middle">删除：全空间扫描 + admin 门禁</text>
+
+  <line x1="155" y1="282" x2="155" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="355" y1="282" x2="355" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="455" y1="310" x2="455" y2="300" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 连接线：网关 -> 记忆层 -->
+  <line x1="455" y1="430" x2="455" y2="474" stroke="#0ea5e9" stroke-width="2" marker-end="url(#arrow2)"/>
+  <text x="465" y="458" font-size="11" fill="#0369a1">ctx.agents.create / ctx.tools.execute</text>
+
+  <!-- DSH 记忆层 -->
+  <rect x="40" y="474" width="820" height="120" rx="10" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="60" y="502" font-size="15" font-weight="700" fill="#92400e">DSH 记忆层（dsh-mnemon）</text>
+  <g font-size="12" fill="#78350f" text-anchor="middle">
+    <rect x="70" y="518" width="170" height="56" rx="8" fill="#fff" stroke="#fbbf24"/>
+    <text x="155" y="542">coordinator.remember</text>
+    <text x="155" y="560" font-size="11" fill="#57534e">蒸馏 + 分类 + 去重</text>
+
+    <rect x="270" y="518" width="170" height="56" rx="8" fill="#fff" stroke="#fbbf24"/>
+    <text x="355" y="542">Memory Spaces</text>
+    <text x="355" y="560" font-size="11" fill="#57534e">6 个本地库</text>
+
+    <rect x="470" y="518" width="170" height="56" rx="8" fill="#fff" stroke="#fbbf24"/>
+    <text x="555" y="542">mnemon.db</text>
+    <text x="555" y="560" font-size="11" fill="#57534e">D:\memory</text>
+
+    <rect x="670" y="518" width="160" height="56" rx="8" fill="#fff" stroke="#fbbf24"/>
+    <text x="750" y="542">Hindsight</text>
+    <text x="750" y="560" font-size="11" fill="#57534e">127.0.0.1:8888</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="450" y="608" font-size="11" fill="#94a3b8" text-anchor="middle">网关只做接入 / 鉴权 / 适配，存储与智能路由完全交给 DSH 自己的记忆引擎</text>
+</svg>

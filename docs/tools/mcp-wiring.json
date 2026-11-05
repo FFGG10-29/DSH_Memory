@@ -1,0 +1,44 @@
+{
+  "cursor": {
+    "path": "C:/Users/13966/.cursor/mcp.json",
+    "server": {
+      "command": "C:\\Users\\13966\\.workbuddy\\binaries\\node\\versions\\22.22.2-6\\node.exe",
+      "args": [
+        "D:\\DeepSeekHarness\\dsh-memory-gateway\\lib\\mcp-server.js"
+      ],
+      "env": {
+        "DSMG_TOKEN": "<你的 token>",
+        "DSMG_PORT": "8890",
+        "DSMG_HOST": "127.0.0.1"
+      }
+    }
+  },
+  "codebuddy": {
+    "path": "C:/Users/13966/.codebuddy/mcp.json",
+    "server": {
+      "command": "C:\\Users\\13966\\.workbuddy\\binaries\\node\\versions\\22.22.2-6\\node.exe",
+      "args": [
+        "D:\\DeepSeekHarness\\dsh-memory-gateway\\lib\\mcp-server.js"
+      ],
+      "env": {
+        "DSMG_TOKEN": "<你的 token>",
+        "DSMG_PORT": "8890",
+        "DSMG_HOST": "127.0.0.1"
+      }
+    }
+  },
+  "workbuddy": {
+    "path": "C:/Users/13966/.workbuddy/mcp.json",
+    "server": {
+      "command": "C:\\Users\\13966\\.workbuddy\\binaries\\node\\versions\\22.22.2-6\\node.exe",
+      "args": [
+        "D:\\DeepSeekHarness\\dsh-memory-gateway\\lib\\mcp-server.js"
+      ],
+      "env": {
+        "DSMG_TOKEN": "<你的 token>",
+        "DSMG_PORT": "8890",
+        "DSMG_HOST": "127.0.0.1"
+      }
+    }
+  }
+}
