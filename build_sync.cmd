@@ -6,7 +6,7 @@ REM      lib/client.js; the root client.js is the source of truth and gets copie
 REM      here at build time so there is only one file to edit)
 REM   3) sync into the DSH profile, unless that entry is a symlink back to this
 REM      workspace (the normal dev setup) - then the build is already live.
-cd /d D:\DeepSeekHarness\dsh-memory-gateway
+cd /d %~dp0
 
 call node_modules\.bin\tsc -p tsconfig.json
 if errorlevel 1 (echo TSC_FAILED & exit /b 1)

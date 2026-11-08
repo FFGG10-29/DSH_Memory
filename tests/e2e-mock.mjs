@@ -7,7 +7,7 @@
 //   - /api/remember without token -> 401
 //   - /api/remember with token -> agents.create -> agents.withInitiator -> tools.execute('mnemon_remember')
 // What it CANNOT prove (needs live DSH): that withInitiator actually feeds
-// exec.agent into mnemon, and that the row lands in D:\memory\data\default\mnemon.db.
+// exec.agent into mnemon, and that the row lands in <共享数据目录>/data/default/mnemon.db.
 
 import { apply } from '../lib/index.js'
 

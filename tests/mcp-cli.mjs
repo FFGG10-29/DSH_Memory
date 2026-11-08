@@ -5,7 +5,7 @@
  * verified without WorkBuddy/CodeBuddy/Cursor in the loop.
  *
  *   node tests/mcp-cli.mjs list
- *   node tests/mcp-cli.mjs recall "阿鱼是谁"
+ *   node tests/mcp-cli.mjs recall "某条记忆"
  *   node tests/mcp-cli.mjs remember "some durable fact"
  *   node tests/mcp-cli.mjs forget <full-uuid>
  *

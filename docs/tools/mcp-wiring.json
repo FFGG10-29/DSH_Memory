@@ -1,10 +1,11 @@
 {
+  "_说明": "三种 MCP 客户端的通用接线模板。请把 <插件目录> 替换为本仓库在本机的绝对路径，把 <你的 token> 替换为网关状态文件里的 token；command 可用本机任一 Node.js 22.19+ 可执行文件。",
   "cursor": {
-    "path": "C:/Users/13966/.cursor/mcp.json",
+    "path": "<用户目录>/.cursor/mcp.json",
     "server": {
-      "command": "C:\\Users\\13966\\.workbuddy\\binaries\\node\\versions\\22.22.2-6\\node.exe",
+      "command": "node",
       "args": [
-        "D:\\DeepSeekHarness\\dsh-memory-gateway\\lib\\mcp-server.js"
+        "<插件目录>/lib/mcp-server.js"
       ],
       "env": {
         "DSMG_TOKEN": "<你的 token>",
@@ -14,11 +15,11 @@
     }
   },
   "codebuddy": {
-    "path": "C:/Users/13966/.codebuddy/mcp.json",
+    "path": "<用户目录>/.codebuddy/mcp.json",
     "server": {
-      "command": "C:\\Users\\13966\\.workbuddy\\binaries\\node\\versions\\22.22.2-6\\node.exe",
+      "command": "node",
       "args": [
-        "D:\\DeepSeekHarness\\dsh-memory-gateway\\lib\\mcp-server.js"
+        "<插件目录>/lib/mcp-server.js"
       ],
       "env": {
         "DSMG_TOKEN": "<你的 token>",
@@ -28,11 +29,11 @@
     }
   },
   "workbuddy": {
-    "path": "C:/Users/13966/.workbuddy/mcp.json",
+    "path": "<用户目录>/.workbuddy/mcp.json",
     "server": {
-      "command": "C:\\Users\\13966\\.workbuddy\\binaries\\node\\versions\\22.22.2-6\\node.exe",
+      "command": "node",
       "args": [
-        "D:\\DeepSeekHarness\\dsh-memory-gateway\\lib\\mcp-server.js"
+        "<插件目录>/lib/mcp-server.js"
       ],
       "env": {
         "DSMG_TOKEN": "<你的 token>",

@@ -28,6 +28,7 @@ import { randomUUID } from 'node:crypto'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, statSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import { homedir } from 'node:os'
 import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
 import z from '@deepseek-ai/schemastery'
@@ -206,7 +207,6 @@ class Gateway {
     }
     // 3) Common install locations.
     const common = [
-      'D:/Tools/npm-global/mnemon.exe',
       join(process.env.LOCALAPPDATA || '', 'Programs', 'mnemon', 'mnemon.exe'),
       join(process.env.USERPROFILE || '', 'go', 'bin', 'mnemon.exe'),
     ]
@@ -425,7 +425,7 @@ class Gateway {
   }
 
   private listSpacesFromDisk(): AnyCtx {
-    const dataDir = (process.env.MNEMON_DATA_DIR || '').trim() || 'D:\\memory'
+    const dataDir = (process.env.MNEMON_DATA_DIR || '').trim() || join(homedir(), '.mnemon')
     const spaces: AnyCtx[] = []
     const seen = new Set<string>()
 
@@ -488,7 +488,7 @@ class Gateway {
     const cli = await this.resolveMnemonCli()
     const env = { ...process.env }
     if (!env.MNEMON_DATA_DIR || env.MNEMON_DATA_DIR.trim() === '') {
-      env.MNEMON_DATA_DIR = 'D:\\memory'
+      env.MNEMON_DATA_DIR = join(homedir(), '.mnemon')
     }
     const useShell = /\.cmd$/i.test(cli) || /\.bat$/i.test(cli)
     // Every Memory Space owns a SEPARATE database, so an id is only findable in
@@ -712,7 +712,7 @@ function buildHandler(gateway: Gateway, token: string, ctx: AnyCtx, config: Gate
     debugProbe: authed(async (_req, res) => {
       const out = await gateway.probeModels()
       ;(out as Record<string, AnyCtx>).mnemonCli = await gateway.resolveMnemonCli()
-      ;(out as Record<string, AnyCtx>).mnemonDataDir = process.env.MNEMON_DATA_DIR || 'D:\\memory'
+      ;(out as Record<string, AnyCtx>).mnemonDataDir = process.env.MNEMON_DATA_DIR || join(homedir(), '.mnemon')
       ;(out as Record<string, AnyCtx>).fetchType = typeof globalThis.fetch
       ;(out as Record<string, AnyCtx>).adminToken = gateway.getAdminToken()
       ;(out as Record<string, AnyCtx>).allowExternalDelete = gateway.getAllowExternalDelete()

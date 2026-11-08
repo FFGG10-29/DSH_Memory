@@ -6,7 +6,7 @@
 
 ## 一、它解决什么问题
 
-本机虽然通过环境变量 `MNEMON_DATA_DIR=D:\memory` 让各工具的 `mnemon` CLI 指向了同一个数据库文件（`D:\memory\data\default\mnemon.db`），但**裸 `mnemon` CLI 直写不经过 DSH 的分类器**，不会智能路由到 Memory Space。
+本机虽然通过环境变量 `MNEMON_DATA_DIR=<共享数据目录>` 让各工具的 `mnemon` CLI 指向了同一个数据库文件（`<共享数据目录>/data/default/mnemon.db`），但**裸 `mnemon` CLI 直写不经过 DSH 的分类器**，不会智能路由到 Memory Space。
 
 要走「和 DSH 一样分类存储」的能力，**请走本网关**（HTTP API 或 MCP），不要再用裸的 `mnemon remember`。
 
@@ -26,7 +26,7 @@
 **Token 与端口在哪里获取：** 在运行 DSH 的那台机器上有一个状态文件：
 
 ```
-<DSH_HOME>/profiles/desktop/memory-gateway.state.json
+<DSH_HOME>/memory-gateway.state.json
 ```
 
 内容形如：
@@ -35,7 +35,7 @@
 { "token": "<你的 token（首次启动自动生成）>", "port": 8890, "createdAt": "<ISO 时间戳>" }
 ```
 
-`DSH_HOME` 通常是 `C:\Users\13966\.dsh`。向 DSH 使用者索取这个 `token` 即可。
+`DSH_HOME` 通常是当前用户目录下的 `.dsh` 文件夹（如 `~/.dsh`）。向 DSH 使用者索取这个 `token` 即可。
 
 > 安全要求：网关只监听本机回环地址（127.0.0.1），所以你的工具必须和 DSH **运行在同一台机器**。
 
@@ -129,7 +129,7 @@ curl http://127.0.0.1:8890/api/health                                       # �
 **提供连接信息（任选其一）：**
 
 - 显式设置环境变量：`DSMG_TOKEN` + `DSMG_PORT` + `DSMG_HOST`
-- 或让它读状态文件：设置 `DSMG_STATE=<DSH_HOME>/profiles/desktop/memory-gateway.state.json`
+- 或让它读状态文件：设置 `DSMG_STATE=<DSH_HOME>/memory-gateway.state.json`
 - 或什么都不设，用默认：host `127.0.0.1`、port `8890`
 
 **MCP 客户端配置示例：**
@@ -192,7 +192,7 @@ curl -X POST http://127.0.0.1:8890/api/forget \
 
 | 行为 | 走本网关 | 裸 `mnemon` CLI |
 | :--- | :--- | :--- |
-| 写入的库 | `D:\memory\data\default\mnemon.db`（同 DSH） | 同一库 |
+| 写入的库 | `<共享数据目录>/data/default/mnemon.db`（同 DSH） | 同一库 |
 | 是否智能分类 / 路由到 Memory Space | ✅ 是（DSH Memory Agent 蒸馏） | ❌ 否，直写原生 store |
 | 检索范围 | 全部激活空间 / 指定空间 | 取决于 CLI 调用 |
 

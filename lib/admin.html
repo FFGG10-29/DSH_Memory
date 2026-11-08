@@ -124,7 +124,7 @@
 <div class="wrap">
   <header>
     <h1>DSH 记忆网关</h1>
-    <div class="sub">配置保存在 <code>%USERPROFILE%\.dsh\profiles\desktop\memory-gateway.config.json</code>，保存后立即生效，无需重启 DSH。</div>
+    <div class="sub">配置保存在 <code>&lt;DSH_HOME&gt;/memory-gateway.config.json</code>，保存后立即生效，无需重启 DSH。</div>
   </header>
 
   <section class="panel">
@@ -132,8 +132,6 @@
     <div class="rows">
       <div class="row"><span class="k">版本 / 端口</span><span class="v" id="s-ver">—</span></div>
       <div class="row"><span class="k">共享 Token</span><span class="v" id="s-token">—</span></div>
-      <div class="row"><span class="k">Hindsight</span><span class="v" id="s-hs">—</span></div>
-      <div class="row"><span class="k">Ollama</span><span class="v" id="s-ollama">—</span></div>
       <div class="row"><span class="k">删除门禁</span><span class="v" id="s-del">—</span></div>
     </div>
   </section>
@@ -171,20 +169,7 @@
         <input type="text" id="defaultSpace" spellcheck="false" placeholder="default">
         <span class="hint">调用方未指定空间时的落点。</span>
       </label>
-      <label class="f">
-        <span>Hindsight 端点</span>
-        <input type="text" id="hindsightEndpoint" spellcheck="false" placeholder="http://127.0.0.1:8888">
-        <span class="hint">留空 = 关闭 Hindsight 跨库召回（阿鱼等历史记忆在此）。</span>
-      </label>
-      <label class="f">
-        <span>Ollama 端点</span>
-        <input type="text" id="ollamaEndpoint" spellcheck="false" placeholder="http://127.0.0.1:11434">
-        <span class="hint">留空 = 关闭本地向量召回。</span>
-      </label>
-      <label class="f">
-        <span>Ollama 模型</span>
-        <input type="text" id="ollamaModel" spellcheck="false" placeholder="nomic-embed-text">
-      </label>
+      <div class="hint" style="grid-column: 1 / -1;">v0.4.2 起写入与检索统一由 DSH 记忆引擎（dsh-mnemon）路由到全部已安装 Provider，无需在此配置各后端端点。</div>
     </div>
     <div class="actions">
       <button id="save">保存设置</button>
@@ -210,17 +195,12 @@
     if (!cfg) return;
     setText('s-ver', 'v' + (cfg.version || '?') + ' · 端口 ' + (cfg.port || '?'));
     setText('s-token', cfg.tokenHint || '—');
-    setText('s-hs', cfg.hindsightEndpoint || 'off');
-    setText('s-ollama', (cfg.ollamaEndpoint || 'off') + (cfg.ollamaModel ? ' · ' + cfg.ollamaModel : ''));
     setText('s-del', cfg.allowExternalDelete ? '共享 Token 可删' : '仅 adminToken 可删');
     $('allowDelete').checked = cfg.allowExternalDelete === true;
     $('del-hint').textContent = cfg.allowExternalDelete
       ? '开启：WorkBuddy / CodeBuddy / Claude Code / Codex 持共享 Token 即可删（adminToken 仍然有效，不会把拥有者锁在外面）。'
       : '关闭：只有拥有者 adminToken 能删，外部工具一律 401。';
     $('defaultSpace').value = cfg.defaultSpace || '';
-    $('hindsightEndpoint').value = cfg.hindsightEndpoint || '';
-    $('ollamaEndpoint').value = cfg.ollamaEndpoint || '';
-    $('ollamaModel').value = cfg.ollamaModel || '';
     $('adminToken').placeholder = cfg.adminTokenSet
       ? '已设置 ' + (cfg.adminTokenHint || '') + '（留空保持不变）'
       : '未设置（留空保持不变）';
@@ -266,10 +246,7 @@
     var patch = {
       confirm: true,
       allowExternalDelete: $('allowDelete').checked === true,
-      defaultSpace: $('defaultSpace').value.trim(),
-      hindsightEndpoint: $('hindsightEndpoint').value.trim(),
-      ollamaEndpoint: $('ollamaEndpoint').value.trim(),
-      ollamaModel: $('ollamaModel').value.trim()
+      defaultSpace: $('defaultSpace').value.trim()
     };
     var admin = $('adminToken').value.trim();
     if (admin) patch.adminToken = admin;
